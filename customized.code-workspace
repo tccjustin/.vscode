@@ -1,0 +1,61 @@
+{
+	"folders": [
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/build/tcn1000-mcu/tmp/work/cortexm7-telechips-linux-musleabi/m7-1/1.0.0-r0/git"
+		},
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/build/tcn1000-mcu/conf"
+		},
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/build/tcn1000/tmp/work/tcn1000-telechips-linux/linux-telechips/5.10.177-r0/git"
+		},
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/build/tcn1000/conf"
+		},
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/poky/meta-telechips"
+		},
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/poky/meta-telechips/meta-cgw"
+		},
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/poky/meta-telechips/meta-dev"
+		},
+		{
+			"path": "build-axon/linux_yp4.0_cgw_1.x.x_dev/poky"
+		}
+
+	],
+	"settings": {
+		"files.exclude": {
+		  "**/build": true,
+		  "**/*.o": true
+		},
+		"search.exclude": {
+		  "**/build": true
+		}
+	  },
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Run FWDN on Remote Server",
+				"type": "shell",
+				"command": "ssh",
+				"args": [
+					"-tt",
+					"jhlee17@10.10.78.15",
+					"cmd.exe /c \"chcp 65001 >NUL && cd /d %USERPROFILE%\\work\\fwdn && .\\run_fwdn_remotely.bat \\\"${workspaceFolder}\\\"\""
+				],
+				"group": "build",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": false,
+					"panel": "shared"
+				},
+				"problemMatcher": []
+			}
+		]
+	}
+}
